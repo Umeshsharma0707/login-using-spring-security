@@ -15,7 +15,7 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <h2 class="text-center">Login</h2>
-                <form action="<c:url value='/login'/>" method="post">
+                <form action="/login" method="post">
                     <div class="form-group">
                         <label for="username">Username:</label>
                         <input type="text" class="form-control" id="username" name="username" required>
