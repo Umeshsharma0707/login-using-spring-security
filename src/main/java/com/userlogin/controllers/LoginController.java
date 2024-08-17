@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.userlogin.Service.UserPrincipal;
+import com.userlogin.models.Users;
 
 @Controller
 public class LoginController {
@@ -22,6 +23,8 @@ public class LoginController {
 	@GetMapping("dashboard")
 	public String dashboard(@AuthenticationPrincipal UserPrincipal userPrincipal , Model model ) {
 		String username = userPrincipal.getUsername();
+		Users user = userPrincipal.getFullUser();
+		model.addAttribute("user", user);
 		model.addAttribute("username", username);
 		return "dashboard";
 	}

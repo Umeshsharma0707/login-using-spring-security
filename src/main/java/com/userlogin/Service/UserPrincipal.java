@@ -41,5 +41,8 @@ public class UserPrincipal implements UserDetails{
 		// TODO Auto-generated method stub
 		return user.getUsername();
 	}
-
+	
+	public Users getFullUser() {
+		return this.user;
+	}
 }

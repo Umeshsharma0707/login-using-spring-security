@@ -43,18 +43,20 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())  
             .authorizeHttpRequests(auth ->
                 auth
-                    .requestMatchers("/index","/home/register", "/login").permitAll() 
+                    .requestMatchers("/index","/home/**", "/login").permitAll() 
                     .anyRequest().authenticated()                
             )
-            .formLogin(formLogin -> 
+            .formLogin(formLogin ->
             formLogin
-            .defaultSuccessUrl("/dashboard", true)
+                .loginPage("/login")
+                .permitAll()
+                .defaultSuccessUrl("/dashboard", true)
         )
-            .logout(logout ->
-                logout
-                    .permitAll()                
-            );
-
+        .logout(logout ->
+            logout.permitAll()
+        );
+            
+       
         return http.build();
     }
 	 

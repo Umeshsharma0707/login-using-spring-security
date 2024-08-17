@@ -13,6 +13,7 @@
 		<c:if test="${username !=null }">
 			<c:out value="${username }"></c:out>
 		</c:if>	</span></h1>
-	<h2>this is your private dashboard</h2>
+	<h2>this is your private dashboard ${user.email }</h2>
+	<h1></h1>
 </body>
 </html>
